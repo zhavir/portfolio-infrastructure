@@ -136,9 +136,15 @@ module.exports = {
       },
     ],
     [
+      '@semantic-release/npm',
+      {
+        npmPublish: false,
+      },
+    ],
+    [
       '@semantic-release/git',
       {
-        assets: ['CHANGELOG.md'],
+        assets: ['package.json', 'CHANGELOG.md'],
         message: `${choreMessage}\n\n\${nextRelease.notes}`,
         // message: choreMessage,
       },

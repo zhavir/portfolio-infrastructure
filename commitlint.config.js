@@ -1,30 +1,32 @@
+import { RuleConfigSeverity } from '@commitlint/types';
+
 module.exports = {
   extends: ['gitmoji'],
   parserPreset: '@gitmoji/parser-opts',
   rules: {
-    'body-leading-blank': [1, 'always'],
+    'body-leading-blank': [RuleConfigSeverity.Warning, 'always'],
     //not setting any max-line-length since we are writing release-notes
     //in our chore(release) commit messages. @see release.config.ts '@semantic-release/git' configurations.
-    //'body-max-line-length': [2, 'always', 100] as const,
-    'footer-leading-blank': [1, 'always'],
+    //'body-max-line-length': [RuleConfigSeverity.Error, 'always', 100] as const,
+    'footer-leading-blank': [RuleConfigSeverity.Warning, 'always'],
     // 'footer-max-line-length': [
-    //     2,
+    //     RuleConfigSeverity.Error,
     //     'always',
     //     100,
     // ] as const,
-    'header-max-length': [2, 'always', 100],
-    'header-trim': [2, 'always'],
+    'header-max-length': [RuleConfigSeverity.Error, 'always', 100],
+    'header-trim': [RuleConfigSeverity.Error, 'always'],
     'subject-case': [
-      2,
+      RuleConfigSeverity.Error,
       'never',
       ['sentence-case', 'start-case', 'pascal-case', 'upper-case'],
     ],
-    'subject-empty': [2, 'never'],
-    'subject-full-stop': [2, 'never', '.'],
-    'type-case': [2, 'always', 'lower-case'],
-    'type-empty': [2, 'never'],
+    'subject-empty': [RuleConfigSeverity.Error, 'never'],
+    'subject-full-stop': [RuleConfigSeverity.Error, 'never', '.'],
+    'type-case': [RuleConfigSeverity.Error, 'always', 'lower-case'],
+    'type-empty': [RuleConfigSeverity.Error, 'never'],
     'type-enum': [
-      2,
+      RuleConfigSeverity.Error,
       'always',
       [
         'style',
