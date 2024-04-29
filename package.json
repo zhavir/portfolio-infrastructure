@@ -1,0 +1,81 @@
+{
+  "name": "portfolio-infrastructure",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "sst bind next dev",
+    "prettier": "npx prettier . --write",
+    "precommit": "npx prettier . --write && npx eslint",
+    "prepare": "node .husky/install.mjs",
+    "cm": "git add . && npm run git:all &&  cz",
+    "git:all": "git diff --cached --name-status --diff-filter=ACDMRTUXB*",
+    "semver": "semantic-release --no-ci",
+    "deploy": "sst deploy --stage production",
+    "check": "npx prettier . --check && npx eslint"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.2.0",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^10.0.2",
+    "@semantic-release/npm": "^12.0.0",
+    "@semantic-release/release-notes-generator": "^13.0.0",
+    "autoprefixer": "^10.0.1",
+    "aws-cdk-lib": "2.132.1",
+    "commitizen": "^4.3.0",
+    "commitlint": "^19.2.0",
+    "commitlint-config-gitmoji": "^2.3.1",
+    "constructs": "10.3.0",
+    "conventional-changelog-gitmoji-config": "^1.5.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-gitmoji-adapter": "^2.0.0",
+    "eslint": "^8",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "3.2.5",
+    "semantic-release-config-gitmoji": "^1.5.3",
+    "semantic-release-gitmoji": "^1.6.5",
+    "sst": "^2.41.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-gitmoji-adapter",
+      "useEmoji": true
+    },
+    "cz-gitmoji-adapter": {
+      "scopes": [
+        "login",
+        "api",
+        "auth",
+        "ci/cd",
+        "infrastructure",
+        "deployment",
+        "backup",
+        "recovery",
+        "release",
+        "init",
+        "runner",
+        "watcher",
+        "config",
+        "web-server",
+        "proxy"
+      ],
+      "questions": {
+        "scope": "Specify a scope: "
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhavir/portfolio-infrastructure"
+  },
+  "bugs": {
+    "url": "https://github.com/zhavir/portfolio-infrastructure/issues"
+  },
+  "homepage": "https://github.com/zhavir/portfolio-infrastructure#readme",
+  "publishConfig": {
+    "access": "restricted"
+  }
+}

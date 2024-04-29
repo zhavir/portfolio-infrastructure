@@ -1,0 +1,4 @@
+# Ignore artifacts:
+*.hbs
+coverage
+*.md
