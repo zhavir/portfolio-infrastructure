@@ -1,5 +1,11 @@
 # Changelog
 
+# [v1.0.2](https://github.com/zhavir/portfolio-infrastructure/compare/v1.0.1...v1.0.2) 
+
+## 🩹 Simple fix for a non-critical issue
+- [`2b6fc63`](https://github.com/zhavir/portfolio-infrastructure/commit/2b6fc63)
+ adhesive-bandage: improve release config
+
 # [v1.0.1](https://github.com/zhavir/portfolio-infrastructure/compare/v1.0.0...v1.0.1) 
 
 ## 🐛 Fixing a bug
